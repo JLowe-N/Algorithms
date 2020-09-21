@@ -1,7 +1,5 @@
 from AlgoExpert.binarysearch import binarySearch
 import unittest
-from data_structures.binarytree import BinaryTree
-from data_structures.generaltree import TreeNode
 
 class TestProgram(unittest.TestCase):
     def test_case_1(self):
