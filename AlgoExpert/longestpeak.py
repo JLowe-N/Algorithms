@@ -1,3 +1,13 @@
+# Given an array, return the longest peak length in the array
+# A peak is strictly increasing from left to right until it reaches it's max value
+# then it strictly decreases from right to left /\
+
+# Time Complexity O(N) - will have some duplication on peak overlap, but
+# simplifies to O(N) despite while loops
+
+# Space Complexity O(1) - only several integer variables needed
+# that do not scale with input size.
+
 def longestPeak(array):
     longestPeakLength = 0
     i = 1
