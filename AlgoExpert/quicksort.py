@@ -28,6 +28,7 @@ def quickSortHelper(array, startIdx, endIdx):
     # Base Case
     if startIdx >= endIdx:
         return
+    # Main logic
     pivotIdx = startIdx
     leftIdx = startIdx + 1
     rightIdx = endIdx
@@ -39,6 +40,7 @@ def quickSortHelper(array, startIdx, endIdx):
         if array[rightIdx] >= array[pivotIdx]:
             rightIdx -= 1
     swap(pivotIdx, rightIdx, array)
+    # Recursion setup
     leftSubarrayIsSmaller = rightIdx - 1 - startIdx < endIdx - (rightIdx + 1)
     if leftSubarrayIsSmaller:
         quickSortHelper(array, startIdx, rightIdx - 1)
