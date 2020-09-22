@@ -5,6 +5,16 @@
 # targetSum = 16
 # result: [[7, 6, 4, -1], [7, 6, 1, 2]]
 
+# Time Complexity - Brute Force would be O(N^4)
+# Due to use of the hash table this is now O(N^2) on average
+# Worst case O(N^3) if we have lots of pairs to iterate through in the hash
+# but more an edge case
+# 1st pair of for-loops iterating forward
+# 2nd pair of for-loops iterating backward
+
+# Space Complexity O(N^2)  Hash table will store N (N - 1) pairs
+# quadruplets may need to store (N) (N - 2) pairs
+
 def fourNumberSum(array, targetSum):
     allPairSums = {}
     quadruplets = []
