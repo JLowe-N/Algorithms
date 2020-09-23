@@ -77,9 +77,9 @@ class DoublyLinkedList:
     # O(1) time, O(1) space
     def remove(self, node):
         if (node == self.head):
-            self.head == self.head.next
+            self.head = self.head.next
         if (node == self.tail):
-            self.tail == self.tail.prev
+            self.tail = self.tail.prev
         self.removeNodeBindings(node)
 
     # O(n) time, O(1) space
