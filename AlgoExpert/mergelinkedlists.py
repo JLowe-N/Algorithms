@@ -4,19 +4,13 @@ class LinkedList:
         self.value = value
         self.next = None
 
-# To Do - what if LL to compare is shorter than LL to merge
-# Will need to stop and the rest of the link will be correct
-
-
+# Complexity - Time O(N + M) where N is elements of LL One, and M is LL Two
+# Space O(1) - in-place, mutating LL input
+# Iterative Solution
 def mergeLinkedLists(headOne, headTwo):
     prevNodeToUpdate = None
     nodeToCompare = headOne
     nodeToMerge = headTwo
-    if headTwo.value <= headOne.value:
-        newHead = headTwo
-    else:
-        newHead = headOne
-
     while nodeToMerge is not None and nodeToCompare is not None:
         if nodeToMerge.value <= nodeToCompare.value:
             nextMerge = nodeToMerge.next
@@ -25,13 +19,53 @@ def mergeLinkedLists(headOne, headTwo):
                 prevNodeToUpdate.next = nodeToMerge
             prevNodeToUpdate = nodeToMerge
             nodeToMerge = nextMerge
-            # Do not move compare pointer until the merge pointer is larger
         else:
-            # Compare node is bigger, move to next compare node
-            if nodeToCompare.next is None:
-                tailOne = nodeToCompare
             prevNodeToUpdate = nodeToCompare
             nodeToCompare = nodeToCompare.next
-    if nodeToMerge is not None:
-        tailOne.next = nodeToMerge
-    return newHead
+    if nodeToCompare is None:
+        prevNodeToUpdate.next = nodeToMerge
+    return headOne if headOne.value < headTwo.value else headTwo
+
+# Alternative write-up for iterative solution
+# def mergeLinkedLists(headOne, headTwo):
+#     p1 = headOne
+#     p1Prev = None
+#     p2 = headTwo
+#     while p1 is not None and p2 is not None:
+#         if p1.value < p2.value:
+#             p1Prev = p1
+#             p1 = p1.next
+#         else:
+#             if p1Prev is not None:
+#                 p1Prev.next = p2
+#             p1Prev = p2
+#             p2 = p2.next
+#             p1Prev.next = p1
+#     if p1 is None:
+#         p1Prev.next = p2
+#     return headOne if headOne.value < headTwo.value else headTwo
+
+### Recursive Solution ###
+# Time Complexity also O(N + M)
+# Space Complexity is worse O(N + M) on average due to function calls sitting on the call stack
+
+# def mergeLinkedLists(headOne, headTwo):
+#     recursiveMerge(headOne, headTwo, None)
+#     return headOne if headOne.value < headTwo.value else headTwo
+
+# def recursiveMerge(p1, p2, p1Prev):
+#     if p1 is None:
+#         p1Prev.next = p2
+#         return
+#     if p2 is None:
+#         return
+
+#     if p1.value < p2.value:
+#         recursiveMerge(p1.next, p2, p1)
+#     else:
+#         if p1Prev is not None:
+#             p1Prev.next = p2
+#         newP2 = p2.next
+#         p2.next = p1
+#         recursiveMerge(p1, newP2, p2)
+#     return
