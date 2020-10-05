@@ -1,3 +1,9 @@
+# Provided the root node of an organizational tree, as well as two employee
+# nodes within the tree, find the lowest common manager between the two report
+# nodes.
+
+# Complexity Time O(N) where n is # nodes Space O(D) where D is the # of nodes 
+# in the deepest branch which will fill the recursive call stack
 def getLowestCommonManager(topManager, reportOne, reportTwo):
     return getOrgInfo(topManager, reportOne, reportTwo).lowestCommonManager
 
