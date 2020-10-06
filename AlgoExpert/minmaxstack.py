@@ -1,3 +1,13 @@
+"""
+Stack implementation that keeps track of the min and max of the stack at 
+all positions.
+
+Operations Time Complexity is O(1) for each single use of its methods while
+overall Space Complexity is O(N) where N is the total number of elements that will
+be added to the stack.  There will be N storage on the stack itself, as well as
+N storage on the minMaxStack.  This simplifies to O(N) storage complexity overall
+ 
+"""
 class MinMaxStack:
     def __init__(self):
         self.stack = []
