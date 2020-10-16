@@ -1,3 +1,8 @@
+'''
+Given a sorted array as an input, construct a BST with the minimum possible height
+and return the root node
+'''
+
 # Solution 1 - Using sorted array property to determine tree construction order
 # Complexity O(N) Time | O(N) Time
 def minHeightBst(array):
