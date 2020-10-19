@@ -1,3 +1,7 @@
+'''
+Given an unsorted array, use the merge sort algorithm to return a sorted array
+'''
+
 # Pointer Solution
 # Complexity O(N log N) Time | O(N) Space where N is the number of elements to sort
 # This solution uses an auxiliary array which is a copy of the input array of length N
