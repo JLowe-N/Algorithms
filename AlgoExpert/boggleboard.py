@@ -14,7 +14,9 @@ words.  Valid words can overlap one another and letter positions can be used for
 multiple words.
 '''
 
-
+# Complexity O(ws + nm * 8^s) time | O(ws + nm) space
+# where w is number of words to check, s is the length of the longest word
+# where n and m are the rows and columns of the boggle board matrix
 def boggleBoard(board, words):
     trie = Trie()
     for word in words:
