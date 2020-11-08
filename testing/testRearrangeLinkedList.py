@@ -1,4 +1,4 @@
-from AlgoExpert import rearragnelinkedlist as program
+from AlgoExpert import rearrangelinkedlist as program
 import unittest
 
 
